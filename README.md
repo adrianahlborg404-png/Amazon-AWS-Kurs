@@ -18,7 +18,7 @@ En EC2-instans (Amazon Linux 2023, `t3.micro`) i region Stockholm kör Apache oc
 
 ```mermaid
 flowchart LR
-    A[GitHub-repo<br/>Amazon-AWS-Kurs] -->|git clone| B[AWS CloudShell<br/>bash deploy.sh]
+    A[GitHub-repo<br/>aws-novatrix] -->|git clone| B[AWS CloudShell<br/>bash deploy.sh]
     B -->|AWS CLI| C[EC2 t3.micro<br/>user-data.sh]
     C -.->|hämtar index.html| A
     D[Webbläsare] -->|http, port 80| C
@@ -53,8 +53,8 @@ Inga verktyg behövs lokalt. AWS CloudShell har AWS CLI och git förinstallerat 
 2. Öppna **CloudShell** i AWS-konsolen och kör:
 
    ```bash
-   git clone https://github.com/adrianahlborg404-png/Amazon-AWS-Kurs.git
-   cd Amazon-AWS-Kurs/v42/scripts
+   git clone https://github.com/adrianahlborg404-png/aws-novatrix.git
+   cd aws-novatrix/v42/scripts
    bash deploy.sh <DIN-PUBLIKA-IP>
    ```
 
@@ -122,7 +122,7 @@ Designval:
 ### Filstruktur
 
 ```
-Amazon-AWS-Kurs/
+aws-novatrix/
 ├── README.md
 ├── .gitignore
 └── v42/

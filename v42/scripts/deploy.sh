@@ -5,8 +5,8 @@
 # EC2-instans som installerar Apache + webbsida via user data.
 #
 # Kors i AWS CloudShell (region Stockholm, eu-north-1):
-#   git clone https://github.com/adrianahlborg404-png/Amazon-AWS-Kurs.git
-#   cd Amazon-AWS-Kurs/v42/scripts
+#   git clone https://github.com/adrianahlborg404-png/aws-novatrix.git
+#   cd aws-novatrix/v42/scripts
 #   bash deploy.sh [DIN-PUBLIKA-IP]   (IP behovs bara for SSH)
 # =============================================================
 set -euo pipefail
