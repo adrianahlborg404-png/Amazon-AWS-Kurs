@@ -8,7 +8,7 @@
 
 # >>> ANDRA till ditt eget repo och din branch <<<
 GITHUB_USER="adrianahlborg404-png"
-REPO="AWS-novatrix-mov25"
+REPO="Amazon-AWS-Kurs"
 BRANCH="main"
 
 RAW_URL="https://raw.githubusercontent.com/${GITHUB_USER}/${REPO}/${BRANCH}/v42/webb/index.html"
