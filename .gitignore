@@ -1,0 +1,3 @@
+# Privata nycklar får aldrig hamna i repot
+*.pem
+*.ppk
