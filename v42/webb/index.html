@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Novatrix AB</title>
+  <style>
+    :root { --bg: #0f172a; --kort: #1e293b; --text: #e2e8f0; --dampad: #94a3b8; --accent: #f59e0b; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    header { padding: 4rem 1.5rem 3rem; text-align: center; border-bottom: 3px solid var(--accent); }
+    header h1 { font-size: 2.6rem; letter-spacing: 0.02em; }
+    header p { color: var(--dampad); margin-top: 0.5rem; font-size: 1.15rem; }
+    main { max-width: 900px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+    .intro { font-size: 1.1rem; margin-bottom: 2rem; }
+    .tjanster { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+    .kort { background: var(--kort); border-radius: 10px; padding: 1.25rem; border-top: 3px solid var(--accent); }
+    .kort h2 { font-size: 1.1rem; margin-bottom: 0.4rem; }
+    .kort p { color: var(--dampad); font-size: 0.95rem; }
+    footer { text-align: center; color: var(--dampad); font-size: 0.85rem; padding: 2rem 1rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Novatrix AB</h1>
+    <p>Trygg IT-drift för små och medelstora företag</p>
+  </header>
+  <main>
+    <p class="intro">
+      Novatrix hjälper företag att driva sin IT smidigt och säkert. Vi tar hand om servrar,
+      användarkonton och support, så att ni kan fokusera på er verksamhet. Nu flyttar vi
+      vår egen webbplats till Amazon Web Services.
+    </p>
+    <section class="tjanster">
+      <div class="kort">
+        <h2>Molntjänster</h2>
+        <p>Flytt och drift av servrar och tjänster i AWS och Azure.</p>
+      </div>
+      <div class="kort">
+        <h2>IT-support</h2>
+        <p>Snabb hjälp till era medarbetare, på plats eller på distans.</p>
+      </div>
+      <div class="kort">
+        <h2>Säkerhet</h2>
+        <p>Behörigheter, backup och övervakning som skyddar er data.</p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    Driftsatt på Amazon EC2 (Amazon Linux 2023 + Apache) &middot; AWS-kursen vecka 42
+  </footer>
+</body>
+</html>
