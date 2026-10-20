@@ -1,8 +1,10 @@
-# Amazon-AWS-Kurs
+# AWS-miljö från kod – Novatrix webbplats i AWS
 
-**Adrian Ahlborg** · Amazon Web Services · Moln- och virtualiseringsspecialist, Campus Mölndal
+Kursprojekt där företaget **Novatrix AB** flyttar sin webbplats till AWS. En mapp per vecka, och varje vecka bygger vidare på samma miljö. Allt skapas och rivs med skript från repot, utan klick i konsolen.
 
-Kursprojekt där företaget **Novatrix AB** flyttar sin webbplats till AWS. En mapp per vecka; varje vecka bygger vidare på samma miljö.
+> Projekt inom utbildningen Moln- och virtualiseringsspecialist, Campus Mölndal.
+
+**Teknik:** AWS EC2 · AWS CLI · CloudShell · Security groups · SSM Parameter Store · user data (cloud-init) · Amazon Linux 2023 · Apache · AWS Budgets · Bash
 
 | Vecka | Tema | Mapp |
 |---|---|---|
@@ -130,3 +132,17 @@ Amazon-AWS-Kurs/
         ├── user-data.sh
         └── teardown.sh
 ```
+
+---
+
+## Vad jag lärde mig
+
+**Att user data bara körs en gång.** Skriptet körs som root vid instansens första start, och resultatet syns i `/var/log/cloud-init-output.log`. Vill jag ändra webbsidan räcker det inte att starta om instansen, utan miljön måste rivas och byggas igen. Därför är repot källan och `deploy.sh` och `teardown.sh` hör ihop.
+
+**Att inte hårdkoda det som ändras.** AMI-ID:t för Amazon Linux byts ut när nya versioner släpps. Genom att hämta det från en SSM-parameter fungerar skriptet även nästa termin.
+
+**Att security groups är en del av designen, inte en eftertanke.** Port 80 är öppen för alla, men port 22 bara för min egen IP. CloudShell har en annan IP än min dator, så SSH därifrån kräver en tillfällig regel som tas bort efteråt.
+
+**Att skript ska tåla att köras igen.** Key pair och security group återanvänds om de redan finns, så att ett avbrutet försök inte lämnar halvfärdiga resurser efter sig.
+
+**Att kostnad är något man planerar.** Budgeten larmar innan något kostar, och `teardown.sh` efter varje arbetspass gör att miljön bara finns när den används.
